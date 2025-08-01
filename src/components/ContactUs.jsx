@@ -126,7 +126,7 @@ const ContactUs = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:3000/contact/send", formData);
+      const res = await axios.post("https://backendapi-gfwk.onrender.com/contact/send", formData);
       toast.success(res.data.message || "Message sent!");
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {

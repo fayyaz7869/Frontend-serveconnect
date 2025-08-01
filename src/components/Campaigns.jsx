@@ -161,7 +161,7 @@
 //               <div className="card h-100 shadow-sm">
 //                 {c.image && (
 //                   <img
-//                     src={`http://localhost:3000/${c.image}`}
+//                     src={`https://backendapi-gfwk.onrender.com/${c.image}`}
 //                     alt={c.title}
 //                     className="card-img-top"
 //                     style={{ height: "200px", objectFit: "cover" }}
@@ -274,7 +274,7 @@ const Campaigns = () => {
               <div className="card h-100 shadow-sm">
                 {c.image && (
                   <img
-                    src={`http://localhost:3000/${c.image}`}
+                    src={`https://backendapi-gfwk.onrender.com/${c.image}`}
                     alt={c.title}
                     className="card-img-top"
                     style={{ height: "200px", objectFit: "cover" }}

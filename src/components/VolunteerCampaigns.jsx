@@ -18,7 +18,7 @@ const VolunteerCampaigns = () => {
   const [selectedCampaign, setSelectedCampaign] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/campaigns")
+    axios.get("https://backendapi-gfwk.onrender.com/campaigns")
       .then(res => setCampaigns(res.data))
       .catch(err => console.log(err));
   }, []);
@@ -36,7 +36,7 @@ const VolunteerCampaigns = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/volunteer/request", {
+      await axios.post("https://backendapi-gfwk.onrender.com/volunteer/request", {
         ...formData,
         campaignId: selectedCampaign._id
       });
@@ -54,7 +54,7 @@ const VolunteerCampaigns = () => {
         {campaigns.map(c => (
           <div className="col-md-4 mb-3" key={c._id}>
             <div className="card shadow">
-              <img src={`http://localhost:3000/${c.image}`} className="card-img-top" alt={c.title} />
+              <img src={`https://backendapi-gfwk.onrender.com/${c.image}`} className="card-img-top" alt={c.title} />
               <div className="card-body">
                 <h5 className="card-title">{c.title}</h5>
                 <p className="card-text">{c.description}</p>
