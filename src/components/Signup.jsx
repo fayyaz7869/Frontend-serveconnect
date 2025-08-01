@@ -45,7 +45,7 @@ const handleGoogleSignup = async () => {
     const googleUser = {
       name: user.displayName || "Google User",
       email: user.email,
-      password: user.uid, // Random/fixed UID as password
+      password: user.uid, 
       role: "user"
     };
 
