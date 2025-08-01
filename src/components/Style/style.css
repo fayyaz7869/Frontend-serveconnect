@@ -1,0 +1,195 @@
+.hero-section {
+  background: #f6f6f6;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 5%;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.text-box {
+  background: orange;
+  padding: 2rem;
+  max-width: 450px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 600px;
+  height: 600px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+.explore-btn {
+  background-color: #88ff00;
+  color: black;
+  font-weight: bold;
+  height: 140px;
+  width: 140px;
+  text-align: center;
+  padding: 10px;
+}
+.login-wrapper {
+  background-color: #f8f9fa;
+  padding: 2rem;
+}
+
+.login-card {
+  max-width: 1000px;
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.login-left {
+  width: 50%;
+  background: linear-gradient(180deg, #2ecc71cc, #27ae60cc),
+    url('../assets/image7.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 3rem;
+}
+
+.logo-box {
+  width: 60px;
+  height: 60px;
+  background: white;
+  color: #27ae60;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  line-height: 60px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.login-right {
+  width: 100%;
+  max-width: 500px;
+}
+.signup-wrapper {
+  background-color: #f8f9fa;
+  padding: 2rem;
+}
+
+.signup-card {
+  max-width: 1000px;
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.signup-left {
+  width: 50%;
+  background: linear-gradient(180deg, #2ecc71cc, #27ae60cc),
+    url('/volunteer.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 3rem;
+}
+
+.logo-box {
+  width: 60px;
+  height: 60px;
+  background: white;
+  color: #27ae60;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  line-height: 60px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.signup-right {
+  width: 100%;
+  max-width: 500px;
+}
+
+.header-banner {
+  background-color: #7ca805;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.help-form .form-control {
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.help-form .form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.help-image {
+  border-radius: 25px;
+  max-width: 80%;
+  height: auto;
+}
+.create-campaign-section {
+  background-color: #f7f9fb;
+}
+
+.create-campaign-form {
+  max-width: 700px;
+}
+.contact-section h2 {
+  font-size: 2.5rem;
+}
+.card h5 {
+  font-weight: 600;
+}
+.card p {
+  font-size: 0.95rem;
+}
+
+
+
+.campaigns-section {
+  background-color: #f9f9f9;
+}
+
+.card-img-top {
+  height: 240px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.create-box {
+  border-top: 1px solid #ccc;
+  margin-top: 50px;
+}
+.create-campaign-banner {
+  background-color: #f4f4f4;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.05);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+}
+.cta-box h4 {
+  font-size: 1.6rem;
+}
+
+.cta-box p {
+  font-size: 1rem;
+}
