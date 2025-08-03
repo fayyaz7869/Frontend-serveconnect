@@ -110,7 +110,6 @@ const handleGoogleSignup = async () => {
               <select defaultValue={state.role} onChange={(event) => setState({ ...state, role: event.target.value })} className="form-select">
                 <option value="">Select Role</option>
                 <option value="user">User</option>
-                <option value="volunteer">Volunteer</option>
                 <option value="ngoCreator">NGOCreator</option>
               </select>
             </div>

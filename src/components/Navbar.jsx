@@ -1,13 +1,14 @@
-// Navbar.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { signOut } from '../redux-config/UserSlice.js'; 
+import { signOut } from '../redux-config/UserSlice.js';
 
 const Navbar = () => {
   const { isLoggedIn, user } = useSelector((state) => state.User);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleLogout = () => {
     dispatch(signOut());
@@ -15,27 +16,58 @@ const Navbar = () => {
     navigate("/login");
   };
 
-  return (
-    <header className="bg-dark text-white py-3">
-      <div className="container d-flex justify-content-between align-items-center">
-        <h2 className="m-0 text-success fw-bold">ServeConnect</h2>
-        <nav>
-          <Link to="/" className="text-white me-4">Home</Link>
-          <Link to="/about" className="text-white me-4">About</Link>
-          <Link to="/contact" className="text-white me-4">Contact Us</Link>
-          <Link to="/campaigns" className="text-white me-4">Campaigns</Link>
+  const toggleNavbar = () => setIsOpen(!isOpen);
 
-          {isLoggedIn ? (
-            <>
-              <span className="text-white me-3">Welcome, {user?.name}</span>
-              <button onClick={handleLogout} className="btn btn-outline-light btn-sm">Logout</button>
-            </>
-          ) : (
-            <>
-              <Link to="/Login" className="btn btn-outline-light btn-sm me-2">Login</Link>
-              <Link to="/Signup" className="btn btn-outline-light btn-sm">Signup</Link>
-            </>
-          )}
+  return (
+    <header className="bg-dark text-white py-1">
+      <div className="container">
+        <nav className="navbar navbar-expand-md navbar-dark">
+          <Link to="/" className="navbar-brand fw-bold text-success">ServeConnect</Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            onClick={toggleNavbar}
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <Link to="/" className="nav-link">Home</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/about" className="nav-link">About</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/contact" className="nav-link">Contact Us</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/campaigns" className="nav-link">Campaigns</Link>
+              </li>
+
+              {isLoggedIn ? (
+                <>
+                  <li className="nav-item">
+                    <span className="nav-link">Welcome, {user?.name}</span>
+                  </li>
+                  <li className="nav-item">
+                    <button onClick={handleLogout} className="btn btn-outline-light btn-sm ms-md-2 mt-2 mt-md-0">Logout</button>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <Link to="/Login" className="btn btn-outline-light btn-sm ms-md-2 mt-2 mt-md-0">Login</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/Signup" className="btn btn-outline-light btn-sm ms-md-2 mt-2 mt-md-0">Signup</Link>
+                  </li>
+                </>
+              )}
+            </ul>
+          </div>
         </nav>
       </div>
     </header>

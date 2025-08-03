@@ -1,122 +1,3 @@
-// import React, { useState } from "react";
-// import { toast, ToastContainer } from 'react-toastify';
-// import axios from 'axios';
-// import { Link } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
-// import './Style/style.css';
-// import { setUser } from "../redux-config/UserSlice";
-// import { useDispatch } from 'react-redux';
-// import EndPoint from "../api/EndPoint.jsx";
-
-// function Login() {
-//     const navigate = useNavigate();
-//     const dispatch = useDispatch();
-//     const [state, setState] = useState({
-//         email: "",
-//         password: "",
-//         role:""
-//     });
-
-//     const handleSubmit = async (event) => {
-//         try {
-//             event.preventDefault();
-//             if (state.email && state.password && state.role)  {
-// let response = await axios.post(EndPoint.SIGN_IN, state, {
-//   withCredentials: true
-// });
-//                 dispatch(setUser(response.data.user));
-//                 navigate("/");
-//             }
-//             else
-//                 toast.error("Please enter cradentials")
-//         } catch (error) {
-//             console.log(error);
-// toast.error(error.response?.data?.message || "Login failed");
-//         }
-//     }
-
-//     return <>
-//         <ToastContainer />
-//         <div className="login-wrapper d-flex align-items-center justify-content-center vh-100">
-//             <div className="login-card d-flex flex-column flex-md-row shadow rounded-4 overflow-hidden">
-//                 {/* Left Image Panel */}
-//                 <div className="login-left d-none d-md-flex align-items-center justify-content-center">
-//                     <div className="text-white text-center">
-//                         <div className="logo-box mb-4">H</div>
-//                         <h2>HOPE FOR</h2>
-//                         <h2 className="fw-bold">HUMANITY</h2>
-//                         <p className="mt-4 fs-5">Welcome to ServeConnect</p>
-//                     </div>
-//                 </div>
-
-//                 <div className="login-right p-4 p-md-5 bg-white">
-//                     <button
-//                         className="btn btn-outline-secondary mb-3"
-//                         onClick={() => navigate("/")}
-//                     >
-//                         ← Back to Home
-//                     </button>
-
-
-//                     <h3 className="fw-bold mb-2">Login</h3>
-//                     <p className="text-muted mb-4">Sign in to continue</p>
-
-//                     <form onSubmit={handleSubmit}>
-//                         <div className="mb-3">
-//                             <label>Email address</label>
-//                             <input onChange={(event) => setState({ ...state,email: event.target.value })} type="email" className="form-control" placeholder="Enter your email" />
-//                         </div>
-
-//                         <div className="mb-4">
-//                             <label>Password</label>
-//                             <input onChange={(event) => setState({ ...state,password: event.target.value })} type="password" className="form-control" placeholder="Enter password" />
-//                         </div>
-
-//                          <div className="mb-4">
-//               <label>Role</label>
-//               <select  onChange={(event)=>setState({...state,role: event.target.value})} type="" className="form-select">
-//                 <option value="">Select Role</option>
-//                 <option value="user">User</option>
-//                 <option value="volunteer">Volunteer</option>
-//                 <option value="ngoCreator">NGOCreator</option>
-//               </select>
-//             </div>
-
-//                         <button type="submit" className="btn btn-success w-100 mb-3">Login</button>
-//                     </form>
-
-//                     <a
-//                         className="btn btn-outline-dark w-100 mb-3"
-//                         href="https://accounts.google.com/signin"
-//                         target="_blank"
-//                         rel="noopener noreferrer"
-//                     >
-//                         <img
-//                             src="https://developers.google.com/identity/images/g-logo.png"
-//                             alt="Google"
-//                             width="20"
-//                             className="me-2"
-//                         />
-//                         Login with Google
-//                     </a>
-
-//                     <p className="text-center">
-//                         Don’t have an account?{" "}
-//                         <Link to="/signup" className="text-primary">
-//                             Sign Up
-//                         </Link>
-//                     </p>
-//                 </div>
-//             </div>
-//         </div>
-        
-//     </>
-// }
-
-// export default Login;
-
-
-
 import React, { useState } from "react";
 import { toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
@@ -126,7 +7,6 @@ import { useDispatch } from 'react-redux';
 import { setUser } from "../redux-config/UserSlice";
 import EndPoint from "../api/EndPoint.jsx";
 
-// 🔥 Firebase imports
 import { auth, provider, signInWithPopup } from "../firebase/firebase-config";
 
 function Login() {
@@ -158,19 +38,11 @@ function Login() {
         }
     };
 
-    // 🔥 Google Login Handler
     const handleGoogleLogin = async () => {
         try {
             const result = await signInWithPopup(auth, provider);
             const user = result.user;
             console.log("Google User:", user);
-
-            // Optionally, send to your backend here:
-            // const res = await axios.post(EndPoint.SIGNUP_GOOGLE, {
-            //   email: user.email,
-            //   name: user.displayName,
-            //   photo: user.photoURL,
-            // });
 
             dispatch(setUser({
                 email: user.email,
@@ -244,7 +116,6 @@ function Login() {
                                 >
                                     <option value="">Select Role</option>
                                     <option value="user">User</option>
-                                    <option value="volunteer">Volunteer</option>
                                     <option value="ngoCreator">NGOCreator</option>
                                 </select>
                             </div>
