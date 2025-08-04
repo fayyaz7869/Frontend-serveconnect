@@ -52,16 +52,16 @@ const Navbar = () => {
                   <li className="nav-item">
                     <span className="nav-link">Welcome, {user?.name}</span>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item mt-2">
                     <button onClick={handleLogout} className="btn btn-outline-light btn-sm ms-md-2 mt-2 mt-md-0">Logout</button>
                   </li>
                 </>
               ) : (
                 <>
-                  <li className="nav-item">
+                  <li className="nav-item mt-2">
                     <Link to="/Login" className="btn btn-outline-light btn-sm ms-md-2 mt-2 mt-md-0">Login</Link>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item mt-2">
                     <Link to="/Signup" className="btn btn-outline-light btn-sm ms-md-2 mt-2 mt-md-0">Signup</Link>
                   </li>
                 </>

@@ -1,92 +1,3 @@
-// import React, { useState } from 'react';
-// import axios from 'axios';
-// import { toast, ToastContainer } from 'react-toastify';
-// import Footer from './Footer';
-// import 'react-toastify/dist/ReactToastify.css';
-// import './Style/style.css';
-
-// const CreateCampaign = ({ userRole = 'NGOCreator' }) => {
-//   const [form, setForm] = useState({
-//     title: '',
-//     description: '',
-//     location: '',
-//     address: '',
-//     email: '',
-//     image: ''
-//   });
-
-//   const handleChange = (e) => {
-//     setForm({ ...form, [e.target.name]: e.target.value });
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     if (userRole !== 'NGOCreator') {
-//       toast.error("You are not authorized to create a campaign.");
-//       return;
-//     }
-
-//     try {
-//       const { data } = await axios.post(
-//         '/api/campaigns',
-//         { ...form, date: new Date() },
-//         { withCredentials: true }
-//       );
-//       toast.success("Campaign created successfully!");
-//       setForm({ title: '', description: '', location: '', address: '', email: '', image: '' });
-//     } catch (err) {
-//       toast.error(err.response?.data?.error || 'Failed to create campaign');
-//     }
-//   };
-
-//   return (
-//     <>
-//       <section className="create-campaign-section py-5">
-//         <div className="container">
-//           <h2 className="text-center mb-4">Create New Campaign</h2>
-
-//           <form onSubmit={handleSubmit} className="create-campaign-form mx-auto shadow p-4 rounded bg-light">
-//             <div className="mb-3">
-//               <label className="form-label">Title</label>
-//               <input type="text" className="form-control" name="title" value={form.title} onChange={handleChange} required />
-//             </div>
-//             <div className="mb-3">
-//               <label className="form-label">Description</label>
-//               <textarea className="form-control" rows="4" name="description" value={form.description} onChange={handleChange} required />
-//             </div>
-//             <div className="mb-3">
-//               <label className="form-label">Email</label>
-//               <input type="email" className="form-control" name="email" value={form.email} onChange={handleChange} required />
-//             </div>
-//             <div className="mb-3">
-//               <label className="form-label">Address</label>
-//               <input type="text" className="form-control" name="address" value={form.address} onChange={handleChange} required />
-//             </div>
-//             <div className="mb-3">
-//               <label className="form-label">Location</label>
-//               <input type="text" className="form-control" name="location" value={form.location} onChange={handleChange} required />
-//             </div>
-//             <div className="mb-3">
-//               <label className="form-label">Image URL</label>
-//               <input type="text" className="form-control" name="image" value={form.image} onChange={handleChange} />
-//             </div>
-//             <div className="text-center">
-//               <button type="submit" className="btn btn-dark">Create Campaign</button>
-//             </div>
-//           </form>
-//         </div>
-//       </section>
-//       <Footer />
-//       <ToastContainer position="bottom-center" />
-//     </>
-//   );
-// };
-
-// export default CreateCampaign;
-
-
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
@@ -145,7 +56,7 @@ const CreateCampaign = ({ userRole = 'NGOCreator' }) => {
         date: '',
         image: null
       });
-      e.target.reset(); // reset file input too
+      e.target.reset(); 
     } catch (err) {
       toast.error(err.response?.data?.error || '❌ Failed to create campaign');
     } finally {

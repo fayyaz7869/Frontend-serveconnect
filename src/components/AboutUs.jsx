@@ -13,7 +13,6 @@ const AboutUs = () => {
           <h2 className="text-center mb-5 fw-bold">About Us</h2>
 
           <div className="row justify-content-center">
-            {/* Mission */}
             <div className="col-md-4 mb-4">
               <div className="card h-100 shadow text-center p-4">
                 <FaBullseye size={50} className="text-primary mb-3" />
@@ -24,7 +23,6 @@ const AboutUs = () => {
               </div>
             </div>
 
-            {/* Vision */}
             <div className="col-md-4 mb-4">
               <div className="card h-100 shadow text-center p-4">
                 <FaEye size={50} className="text-success mb-3" />
@@ -35,7 +33,6 @@ const AboutUs = () => {
               </div>
             </div>
 
-            {/* Values */}
             <div className="col-md-4 mb-4">
               <div className="card h-100 shadow text-center p-4">
                 <FaHandshake size={50} className="text-warning mb-3" />

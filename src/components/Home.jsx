@@ -12,12 +12,10 @@ const Home = () => {
     <>
       
 <div className="container my-5" style={{backgroundImage: `url(${image1})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '600px', display: 'flex', alignItems: 'center', width: '100%'}}>
-      {/* <section className="hero-section d-flex align-items-center justify-content-between px-5 py-4"> */}
         <div className="text-box ">
           <h3 className="fw-bold">WE CAN CHANGE IT TOGETHER LET’S DO IT NOW</h3>
           <p>If God gave you, find people who really need you</p>
         </div>
-      {/* </section> */}
 </div>
       <section className="container my-5 text-center">
         <div className="row justify-content-center">
